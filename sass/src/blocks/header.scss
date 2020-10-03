@@ -1,0 +1,113 @@
+.header{
+    &__offers{
+        display: none;
+    }
+    &__offer-link{
+        &:hover{
+            opacity: 0.6;
+        }
+        &:active{
+            opacity: 0.3;
+        }
+    }
+    &__logo{
+        &:hover[href]{
+            opacity: 0.6;
+        }
+        &:active[href]{
+            opacity: 0.3;
+        }
+        display: block;
+        padding-top: 22px; 
+        padding-bottom: 22px;
+        height: 35px;
+
+        text-align: center;
+        border-bottom: 1px solid #ececec;
+    }
+    &__logo-image{
+        width: 86px;
+        height: 35px;
+    }
+    &__delivery-info{
+        display: none;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: 0 auto;
+    padding: 0;
+
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@media(min-width: $tablet-width){
+    .header{
+        &__logo{
+            border: 0;
+        }
+        &__logo-image{
+            width: 112px;
+            height: 46px;
+        }
+        &__delivery-info{
+            display: block;
+            position: absolute;
+            right: 50px;
+            bottom: -57px;
+        }
+        flex-direction: row;
+        justify-content: space-between;
+        width: 668px;
+        padding: 0 50px;
+        margin: 0 auto;
+
+        border-bottom: 1px solid #ececec;
+
+    }
+}
+
+@media(min-width: $desktop-width){
+    .header{
+        &__logo{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-top: 9px;
+
+            height: 89px;
+        }
+        &__logo-image{
+            width: 149px;
+            height: auto;
+            // padding-top: 0px; 
+        }
+        &__offers{
+            display: block;
+            position: absolute;
+            left: 100px;
+            bottom: -42px;
+
+            font-size: 15px;
+        }
+        &__offer-link{
+            color: #000000;
+
+            margin-right: 59px;
+        }
+        &__delivery-info{
+            right: 100px;
+        }
+        width: 1050px;
+        padding: 0 100px;
+        margin: 0 auto;
+    }
+}

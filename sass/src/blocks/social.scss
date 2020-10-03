@@ -1,0 +1,32 @@
+.social{
+    &__list{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 260px;
+        height: 81px;
+        padding-left: 57px;
+        padding-right: 62px;
+
+        list-style: none;
+
+        border-bottom: 1px solid #e5e5e5;
+    }
+    &__item-image:hover{
+        fill: #46c1ae;
+    }
+    &__item-image:active{
+        opacity: 0.3;
+    }
+}
+
+@media(min-width: $tablet-width){
+    .social{
+        &__list{
+            border: none;
+        }
+    }
+}

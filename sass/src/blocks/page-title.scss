@@ -1,0 +1,83 @@
+.page-title{
+    &--background--no-image{
+        background-image: none;
+        height: 176px;
+    }
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 70px 30px;
+    padding-bottom: 0;
+    height: 282px;
+    width: 320px;
+
+    font-style: normal;
+    font-size: 27px;
+    line-height: 30px;
+    text-align: center;
+    color: #010000;
+    font-weight: 700;
+
+    background: url(../img/page-title/index-mobile.jpg) top no-repeat #f1f1f1;
+}
+
+@media(min-width: $tablet-width){
+    .page-title{
+        &--background--no-image{
+            &::after{
+                content: '';
+    
+                position: absolute;
+                width: 768px;
+                height: 22px;
+                bottom: -10px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+    
+    
+                background: url(../img/services/zigzag.svg) top ;
+                background-size: 100%;
+    
+                
+            }
+            background-image: none;
+            height: 226px;
+
+            padding-top: 95px;
+            padding-bottom: 0;
+        }
+        
+        position: relative;
+        z-index: -1;
+        width: 768px;
+        height: 746px;
+        padding: 153px 50px;
+
+        font-size: 43px;
+        line-height: 50px;
+
+        background: url(../img/page-title/index-tablet.jpg) center -1px no-repeat #f1f1f1;
+    }
+}
+
+@media(min-width: $desktop-width){
+    .page-title{
+        &--background--no-image{
+            &::after{
+                width: 100%;
+                height: 34px;  
+            }
+            width: 1150px;
+            height: 260px;
+            padding-top: 93px;
+        }
+        
+        width: 1250px;
+        padding: 153px 300px;
+
+        font-size: 53px;
+        line-height: 57px;
+
+        background-color: #f9f9f9;
+    }
+}

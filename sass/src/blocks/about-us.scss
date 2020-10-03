@@ -1,0 +1,81 @@
+.about-us{
+    &__list{
+        margin: 0;
+        padding: 0;
+
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: 700;
+        color: #000;
+
+        list-style: none;
+    }
+    &__list-item{
+        &::before{
+            content: '';
+
+            position: absolute;
+            top: -51px;
+            left: -6px;
+
+            width: 60px;
+            height: 60px;
+
+            background: url('../img/about-us/icon-1.png') no-repeat top center;
+        }
+        &--dollar::before{
+            background-image: url('../img/about-us/icon-3.png');
+        }
+        &--heart::before{
+            background-image: url('../img/about-us/icon-5.png');
+        }
+        &--knit::before{
+            background-image: url('../img/about-us/icon-2.png');
+        }
+        &--domestic::before{
+            background-image: url('../img/about-us/icon-4.png');
+        }
+        &--gift::before{
+            background-image: url('../img/about-us/icon-6.png');
+        }
+        position: relative;
+        margin-top: 84px;
+    }
+    box-sizing: border-box;
+    width: 320px;
+    margin: 0 auto;
+    padding: 27px 30px;
+}
+
+@media(min-width: $tablet-width){
+    .about-us{
+        &__list{
+            display: flex;
+
+            font-size: 20px;
+            line-height: 22px;
+        }
+        &__list-item{
+            margin-top: 107px;
+        }
+        &__list-wrapper{
+            width: 334px;
+        }
+        width: $tablet-width;
+        margin: 0 auto;
+        padding: 47px 50px;
+        padding-bottom: 87px;
+    }
+}
+
+@media(min-width: $desktop-width){
+    .about-us{
+        &__list-wrapper{
+            width: 350px;
+        }
+        width: $desktop-width;
+        margin: 0 auto;
+        padding: 60px 275px;
+        padding-bottom: 94px;
+    }
+}

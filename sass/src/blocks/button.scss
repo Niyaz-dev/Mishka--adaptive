@@ -1,0 +1,50 @@
+.button{
+    &--fz{
+        &--small{
+            font-size: 17px;
+            line-height: 16px;
+            padding: 17px 0;
+        }
+    }
+    &:hover{
+        color: #fff;
+        background-color: #444;
+    }
+    &:active{
+        color: rgba($color: #ffffff, $alpha: 0.3);
+    }
+    &--modal{
+        color: #fff;
+        background-color: #63d1bb;
+        border: none;
+    }
+    box-sizing: border-box;
+    display: inline-block;
+    width: 260px;
+    padding: 15px 0;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: #444444;
+    text-align: center;
+    text-transform: uppercase;
+    
+    border: 2px solid #444;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@media(min-width: $tablet-width){
+    .button{
+        &--order{
+            width: 290px;
+        }
+        &--modal{
+            width: 100%;
+        }
+        width: auto;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}

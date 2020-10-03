@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/catalog.css">
+    <title>Mishka - catalog</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="header__logo">
+            <picture>
+                <source media="(min-width: 1250px)" srcset="img/header/mishka-logo-desktop.png">
+                <source media="(min-width: 768px)" srcset="img/header/mishka-logo-tablet.png">
+                <img class="header__logo-image" src="img/header/mishka-logo-mobile.png" width="86" height="35" alt="Логотип интернет магазина «Mishka»">
+            </picture>
+        </a>
+        <nav class="main-nav main-nav--opened main-nav--nojs">
+            <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+            <div class="main-nav__wrapper">
+                <ul class="main-nav__list main-nav__list--site site-list">
+                    <li class="site-list__item"><a class="site-list__item-link site-list__item-link--catalog" href="catalog.html">Каталог товаров</a></li>
+                    <li class="site-list__item"><a class="site-list__item-link site-list__item-link--knitting" href="knitting.html">Вязание на заказ</a></li>
+                </ul>
+                <ul class="main-nav__list main-nav__list--user user-list">
+                    <li class="user-list__item"><a class="user-list__item-link user-list__item-link--search" href="">Поиск по сайту</a></li>
+                    <li class="user-list__item"><a class="user-list__item-link user-list__item-link--basket" href="">Корзина: пока пуста</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="header__offers">
+            <a href="" class="header__offer-link">Новые поступления</a>
+            <a href="" class="header__offer-link">Распродажа</a>
+        </div>
+        <p class="header__delivery-info">Бесплатная доставка по России</p>
+    </header>
+    <main class="catalog-main">
+        <h1 class="page-title page-title--background--no-image">Каталог товаров</h1>
+        <section class="product-catalog">
+            <ul class="product-catalog__list">
+                <li class="product-catalog__item">
+                    <picture>
+                        <source media="(min-width: 1250px)" srcset="img/product-catalog/photo-1-desktop.jpg">
+                        <source media="(min-width: 768px)" srcset="img/product-catalog/photo-1-tablet.jpg">
+                        <img class="product-catalog__image" src="img/product-catalog/photo-1-mobile.jpg" width="260" height="195" alt="Фотография товара">
+                    </picture>
+                    <div class="product-catalog__info">
+                        <h3 class="product-catalog__title">Зайчик-попрыгайчик</h3>
+                        <p class="product-catalog__description">Рост 30 см, вес 200 г</p>
+                        <div class="product-catalog__buy">
+                            <p class="product-catalog__price">1 200 руб.</p>
+                            <a href="" class="product-catalog__add-to-card js-add-to-card">
+                                    <svg class="product-catalog__add-to-card-image" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="264.21 370.96 20.29 18.85" enable-background="new 264.21 370.96 20.29 18.85" xml:space="preserve" width="20" height="19">
+                                        <g id="Shop_1_">
+                                            <g id="bag2">
+                                                <polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" points="283.03,378.94 
+                                                    280.13,389.06 268.57,389.06 265.68,378.94 		"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="272.18" y1="371.71" x2="268.57" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="276.52" y1="371.71" x2="280.13" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="264.96" y1="378.94" x2="283.75" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="266.4" y1="383.28" x2="282.3" y2="383.28"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                <span class="visually-hidden">Добавить в корзину</span></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="product-catalog__item">
+                    <picture>
+                        <source media="(min-width: 1250px)" srcset="img/product-catalog/photo-2-desktop.jpg">
+                        <source media="(min-width: 768px)" srcset="img/product-catalog/photo-2-tablet.jpg">
+                        <img class="product-catalog__image" src="img/product-catalog/photo-2-mobile.jpg" width="260" height="195" alt="Фотография товара">
+                    </picture>
+                    <div class="product-catalog__info">
+                        <h3 class="product-catalog__title">Корзинка для белья</h3>
+                        <p class="product-catalog__description">Диаметр 15 см, высота 10 см</p>
+                        <div class="product-catalog__buy">
+                            <p class="product-catalog__price">690 руб.</p>
+                            <a href="" class="product-catalog__add-to-card js-add-to-card">
+                                    <svg class="product-catalog__add-to-card-image" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="264.21 370.96 20.29 18.85" enable-background="new 264.21 370.96 20.29 18.85" xml:space="preserve" width="20" height="auto">
+                                        <g id="Shop_1_">
+                                            <g id="bag2">
+                                                <polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" points="283.03,378.94 
+                                                    280.13,389.06 268.57,389.06 265.68,378.94 		"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="272.18" y1="371.71" x2="268.57" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="276.52" y1="371.71" x2="280.13" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="264.96" y1="378.94" x2="283.75" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="266.4" y1="383.28" x2="282.3" y2="383.28"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                <span class="visually-hidden">Добавить в корзину</span></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="product-catalog__item">
+                    <picture>
+                        <source media="(min-width: 1250px)" srcset="img/product-catalog/photo-3-desktop.jpg">
+                        <source media="(min-width: 768px)" srcset="img/product-catalog/photo-3-tablet.jpg">
+                        <img class="product-catalog__image" src="img/product-catalog/photo-3-mobile.jpg" width="260" height="195" alt="Фотография товара">
+                    </picture>
+                    <div class="product-catalog__info">
+                        <h3 class="product-catalog__title">Большая корзинка для игрушек</h3>
+                        <p class="product-catalog__description">Диаметр 30 см, высота 30 см</p>
+                        <div class="product-catalog__buy">
+                            <p class="product-catalog__price">1 500 руб.</p>
+                            <a href="" class="product-catalog__add-to-card js-add-to-card">
+                                    <svg class="product-catalog__add-to-card-image" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="264.21 370.96 20.29 18.85" enable-background="new 264.21 370.96 20.29 18.85" xml:space="preserve" width="20" height="auto">
+                                        <g id="Shop_1_">
+                                            <g id="bag2">
+                                                <polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" points="283.03,378.94 
+                                                    280.13,389.06 268.57,389.06 265.68,378.94 		"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="272.18" y1="371.71" x2="268.57" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="276.52" y1="371.71" x2="280.13" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="264.96" y1="378.94" x2="283.75" y2="378.94"/>
+                                                
+                                                    <line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" x1="266.4" y1="383.28" x2="282.3" y2="383.28"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                <span class="visually-hidden">Добавить в корзину</span></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="production">
+            <div class="production__wrapper">
+                <h3 class="production__title">Процесс производства</h3>
+                <picture class="production__picture">
+                    <source media="(min-width: 1250px)" srcset="img/production/video-desktop.jpg">
+                    <source media="(min-width: 768px)" srcset="img/production/video-tablet.jpg">
+                    <img class="production__video" src="img/production/video-mobile.jpg" width="260"  alt="Видео товара">
+                </picture>
+                <!-- <video class="prodiction__video" poster="img/production/video-mobile.jpg" src="">
+                    Видео</video> --> 
+                <p class="production__text">
+                    По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+                </p>
+                <button class="production__button button button--fz--small">Сделать заказ</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <a class="footer__logo">
+            <svg class="footer__logo-image" width="102" height="34">
+                <use xlink:href="img/footer/sprite.svg#footer-logo"></use>
+            </svg>
+            <!-- <img class="footer__logo-image" src="img/footer/footer-logo.svg"  alt="Логотип интернет магазина «Mishka»"> -->
+        </a>
+        <div class="footer__social social">
+            <ul class="social__list">
+                <li class="social__item"><a href="" class="social__link social__link--in">
+                    <svg class="social__item-image social__item-image--in"width="22" height="21">
+                        <use xlink:href="img/footer/sprite.svg#instagram"></use>
+                    </svg>
+                    <span class="visually-hidden">Instagram</span></a></li>
+                <li class="social__item"><a href="" class="social__link social__link--fb">
+                    <svg class="social__item-image social__item-image--fb"width="15" height="28">
+                        <use xlink:href="img/footer/sprite.svg#facebook"></use>
+                    </svg>
+                    <span class="visually-hidden">Facebook</span></a></li>
+                <li class="social__item"><a href="" class="social__link social__link--tw">
+                    <svg class="social__item-image social__item-image--tw"width="23" height="20">
+                        <use xlink:href="img/footer/sprite.svg#twitter"></use>
+                    </svg>
+                    <span class="visually-hidden">Twitter</span></a></li>
+            </ul>
+        </div>
+        <p class="footer__copyright">
+            <b class="footer__copyright-developed">Разработано:</b>
+            <a class="footer__copyright-link" href="https://htmlacademy.ru">
+                <svg class="footer__copyright-link-image"width="27" height="34">
+                    <use xlink:href="img/footer/sprite.svg#htmlacademy"></use>
+                </svg>
+                <span class="visually-hidden">HTML Academy</span>
+            </a>
+        </p>
+    </footer>
+    <div class="modal">
+        <section class="add-to-cart">
+            <h2 class="add-to-cart__title">Добавить в корзину</h2>
+            <p class="add-to-cart__text">Выберите размер:</p>
+            <form class="add-to-cart__form" method="get" action="https://echo.htmlacademy.ru">
+                <ul class="add-to-cart__list">
+                    <li class="add-to-cart__item"><input type="radio" name="size" value="s" id="size-s" class="visually-hidden add-to-cart__size-button"><label for="size-s" class="add-to-cart__label">s</label></li>
+                    <li class="add-to-cart__item"><input type="radio" name="size" value="m" id="size-m" class="visually-hidden add-to-cart__size-button" checked><label for="size-m" class="add-to-cart__label">m</label></li>
+                    <li class="add-to-cart__item"><input type="radio" name="size" value="l" id="size-l" class="visually-hidden add-to-cart__size-button"><label for="size-l" class="add-to-cart__label">l</label></li>
+                </ul>
+                <button type="submit" class="add-to-cart__button button button--modal">Добавить</button>
+            </form>
+        </section>
+    </div>
+    <script src="js/popup-menu.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>
