@@ -2,10 +2,10 @@
 Adaptive website of "Mishka" handmade craft store for home
 <div align="center" >
   <a href="https://niyaz-dev.github.io/Mishka--adaptive/index.html">
-    <img width="260" alt="Mishka" src="https://user-images.githubusercontent.com/60061013/95120269-f8a35380-0755-11eb-9d78-85071e8363ce.jpg">                                                              
+    <img width="120" alt="Mishka" src="https://user-images.githubusercontent.com/60061013/95120269-f8a35380-0755-11eb-9d78-85071e8363ce.jpg">                                                              
   </a>
   <a href="https://niyaz-dev.github.io/Mishka--adaptive/catalog.html">
-    <img width="200" alt="Mishka" src="https://user-images.githubusercontent.com/60061013/95120262-f6d99000-0755-11eb-9766-f42aa2f9afce.jpg">
+    <img width="210" alt="Mishka" src="https://user-images.githubusercontent.com/60061013/95120262-f6d99000-0755-11eb-9766-f42aa2f9afce.jpg">
   </a>
   <a href="https://niyaz-dev.github.io/Mishka--adaptive/knitting.html">
     <img width="200" alt="Mishka" src="https://user-images.githubusercontent.com/60061013/95120268-f80abd00-0755-11eb-869d-f741f83c8a44.jpg">
