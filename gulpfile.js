@@ -1,31 +1,31 @@
 let projectFolder = "dist";
-let sourceFolder ="src";
+let sourceFolder = "src";
 
-let path={
-    build:{
-        html: projectFolder+"/",
-        css: projectFolder+"/css/",
-        js: projectFolder+"/js/",
-        img: projectFolder+"/img/",
-        fonts: projectFolder+"/fonts/",
+let path = {
+    build: {
+        html: projectFolder + "/",
+        css: projectFolder + "/css/",
+        js: projectFolder + "/js/",
+        img: projectFolder + "/img/",
+        fonts: projectFolder + "/fonts/",
     },
-    src:{
-        html: sourceFolder+"/views/*.html",
-        css: sourceFolder+"/scss/*.scss",
-        js: sourceFolder+"/js/*.js",
-        img: sourceFolder+"/img/**/*.{jpg,png,svg}",
-        fonts: sourceFolder+"/fonts/*.ttf",
+    src: {
+        html: sourceFolder + "/views/*.html",
+        css: sourceFolder + "/scss/*.scss",
+        js: sourceFolder + "/js/*.js",
+        img: sourceFolder + "/img/**/*.{jpg,png,svg}",
+        fonts: sourceFolder + "/fonts/*.ttf",
     },
-    watch:{
-        html: sourceFolder+"/**/*.html",
-        css: sourceFolder+"/scss/**/*.scss",
-        js: sourceFolder+"/js/**/*.js",
-        img: sourceFolder+"/img/**/*.{jpg,png,svg}",
+    watch: {
+        html: sourceFolder + "/**/*.html",
+        css: sourceFolder + "/scss/**/*.scss",
+        js: sourceFolder + "/js/**/*.js",
+        img: sourceFolder + "/img/**/*.{jpg,png,svg}",
     },
-    clean: "./"+projectFolder+"/",
+    clean: "./" + projectFolder + "/",
 }
 
-let {src, dest} = require('gulp'),
+let { src, dest } = require('gulp'),
     gulp = require('gulp'),
     browsersync = require("browser-sync").create(),
     fileinclude = require("gulp-file-include"),
@@ -41,18 +41,19 @@ let {src, dest} = require('gulp'),
     webpcss = require("gulp-webpcss"),
     ttf2woff = require("gulp-ttf2woff"),
     ttf2woff2 = require("gulp-ttf2woff2"),
+    svgstore = require("gulp-svgstore"),
     autoprefixer = require("gulp-autoprefixer");
 
-function browserSync(params){
+function browserSync(params) {
     browsersync.init({
-        server:{
-            baseDir:  "./"+projectFolder+"/"
+        server: {
+            baseDir: "./" + projectFolder + "/"
         },
         port: 3000
     })
 }
 
-function fonts(params){
+function fonts(params) {
     src(path.src.fonts)
         .pipe(ttf2woff())
         .pipe(dest(path.build.fonts));
@@ -62,82 +63,93 @@ function fonts(params){
 
 }
 
-function html(){
-    return src(path.src.html) 
-    .pipe(fileinclude()) 
-    .pipe(webphtml())
-    .pipe(dest(path.build.html))
-    .pipe(browsersync.stream())
+function html() {
+    return src(path.src.html)
+        .pipe(fileinclude())
+        .pipe(webphtml())
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.stream())
 }
 
-function images(){
-    return src(path.src.img) 
-    .pipe(
-        webp({
-            quality: 70
+function images() {
+    return src(path.src.img)
+        .pipe(
+            webp({
+                quality: 70
+            })
+        )
+        .pipe(dest(path.build.img))
+        .pipe(src(path.src.img))
+        .pipe(
+            imagemin({
+                progressive: true,
+                svgoPlugins: [{
+                    removeViewBox: true
+                }],
+                interlaced: true,
+                optimizationLevel: 3
+            }))
+        .pipe(dest(path.build.img))
+        .pipe(browsersync.stream())
+}
+
+function js() {
+    return src(path.src.js)
+        .pipe(fileinclude())
+        .pipe(dest(path.build.js))
+        .pipe(uglify())
+        .pipe(rename({
+            extname: ".min.js"
+        }
+        ))
+        .pipe(dest(path.build.js))
+        .pipe(browsersync.stream())
+}
+
+function css() {
+    return src(path.src.css)
+        .pipe(sass({
+            outputStyle: "expanded"
         })
-    )
-    .pipe(dest(path.build.img))
-    .pipe(src(path.src.img))
-    .pipe(
-        imagemin({
-        progressive: true,
-        svgoPlugins: [{ removeViewBox: false}],
-        interlaced: true,
-        optimizationLevel: 3
-    }))
-    .pipe(dest(path.build.img))
-    .pipe(browsersync.stream())
+        )
+        .pipe(group_media())
+        .pipe(autoprefixer({
+            overrideBrowserlist: ["last 5 versions"],
+            cascade: true
+        }))
+        .pipe(webpcss())
+        .pipe(dest(path.build.css))
+        .pipe(clean_css())
+        .pipe(rename({
+            extname: ".min.css"
+        }
+        ))
+        .pipe(dest(path.build.css))
+        .pipe(browsersync.stream())
 }
 
-function js(){
-    return src(path.src.js) 
-    .pipe(fileinclude()) 
-    .pipe(dest(path.build.js))
-    .pipe(uglify())
-    .pipe(rename({
-        extname: ".min.js"
-    }
-    ))
-    .pipe(dest(path.build.js))
-    .pipe(browsersync.stream())
-}
-
-function css(){
-    return src(path.src.css) 
-    .pipe(sass({
-        outputStyle: "expanded"
-    })
-    )
-    .pipe(group_media())
-    .pipe(autoprefixer({
-        overrideBrowserlist: ["last 5 versions"],
-        cascade: true
-    }))
-    .pipe(webpcss())
-    .pipe(dest(path.build.css))
-    .pipe(clean_css())
-    .pipe(rename({
-        extname: ".min.css"
-    }
-    ))
-    .pipe(dest(path.build.css))
-    .pipe(browsersync.stream())
-}
-
-function watchFiles(params){
+function watchFiles(params) {
     gulp.watch([path.watch.html], html)
     gulp.watch([path.watch.css], css)
     gulp.watch([path.watch.js], js)
     gulp.watch([path.watch.img], images)
 }
 
-function clean(params){
+function clean(params) {
     return del(path.clean)
 }
 
-let build = gulp.series(clean,gulp.parallel(js,css,html,images,fonts));
-let watch=gulp.parallel(build,browserSync,watchFiles);
+gulp.task("sprite", function () {
+    return gulp.src("src/img/order-form/icon-*.svg")
+        .pipe(svgstore({
+            inlineSvg: false
+        }))
+        .pipe(rename("sprite.svg"))
+        .pipe(gulp.dest(path.build.img + "/order-form/"))
+});
+
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, "sprite"));
+let watch = gulp.parallel(build, browserSync, watchFiles);
 
 exports.css = css;
 exports.fonts = fonts;
