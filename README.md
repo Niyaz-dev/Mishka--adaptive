@@ -28,9 +28,9 @@ The project is built using node [Node.js](https://nodejs.org/). To compile the p
 $ cd Mishka--adaptive
 $ npm install gulp -g
 $ npm install
-$ gulp build
 ```
-Enter ``` $ gulp build ```
+* enter `$ gulp build` to build project
+* enter `$ gulp` to build project with active watcher
 
 
 ### Live Demo
