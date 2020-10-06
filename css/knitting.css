@@ -533,12 +533,12 @@ input[type="radio"].visually-hidden {
 
 .order-form__icon--phone {
   right: 8px;
-  bottom: 29px;
+  bottom: 48px;
 }
 
 .order-form__icon--mail {
   right: 4px;
-  bottom: 27px;
+  bottom: 46px;
 }
 
 .add-to-cart {
