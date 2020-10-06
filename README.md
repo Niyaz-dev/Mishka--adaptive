@@ -30,6 +30,8 @@ $ npm install gulp -g
 $ npm install
 $ gulp build
 ```
+Enter ``` $ gulp build ```
+
 
 ### Live Demo
 Web-page is deployed on github-pages and aviable by links: [Mishka-main](https://niyaz-dev.github.io/Mishka--adaptive/index.html), [Mishka-catalog](https://niyaz-dev.github.io/Mishka--adaptive/catalog.html) and  [Mishka-knitting](https://niyaz-dev.github.io/Mishka--adaptive/knitting.html)
